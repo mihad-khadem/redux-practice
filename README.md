@@ -1,32 +1,27 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 # redux-practice
-"# redux-practice" 
+
+### Table of learning contents
+
+- introduction to redux-toolkit
+- redux store
+- provide the redux store to react
+- redux state slice
+- adding slice reducers to the store
+- using redux state and actions in react component
+
+## SUMMARY
+
+- Create a Redux store with configureStore
+  - `configureStore` accepts a reducer function as a named argument.
+  - `configureStore` automatically sets up the store with good default settings.
+- Provide the Redux store to the React application components.
+  - Put a React-Redux `<Provider>` component around your `<App />` component.
+  - Pass the Redux store as `<Provider store={store}>`
+- Create a Redux "slice" reducer with `createSlice`
+  - `createSlice` accepts a string name, an initial state, and named reducer functions.
+  - Call `createSlice` with a string name, an initial state, and named reducer functions.
+  - Reducer functions may "mutate" the state using Immer
+  - Export the generated slice reducer and action creators.
+- Use the React-Redux `useSelector/useDispatch `hooks in React components.
+  - Read data from the store with the `useSelector` hook.
+  - Get the `dispatch` function with the `useDispatch` hook, and dispatch actions as needed.
